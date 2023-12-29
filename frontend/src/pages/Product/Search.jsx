@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from 'react-redux';
-import { getProducts, reset , deleteProduct } from "../../features/products/productSlice";
+import { getProducts, reset ,} from "../../features/products/productSlice";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import ProductHeader from "../../components/ProductHeader";
@@ -31,44 +31,6 @@ const Search= () => {
             };
         }, [dispatch, isError, message]);
     
-        const handleEdit = (productId) => {
-            navigate(`/products/updateProduct/${productId}`);
-        };
-    
-        const handleDelete = (productId) => {
-            dispatch(deleteProduct(productId));
-    
-            // wait two seconds with alert deleted and reload page
-            setTimeout(() => {
-                dispatch(getProducts());
-            }, 2000);
-    
-            navigate('/');
-        };
-    
-        const handleToggleFavorite = async (productId) => {
-            try {
-                const response = await fetch(
-                    `http://localhost:3000/api/product/favourite/${productId}`,
-                    {
-                        method: 'PUT',
-                        headers: {
-                            'Content-Type': 'application/json',
-                        },
-                    }
-                );
-    
-                if (response.ok) {
-                    window.location.reload(); // Reload the page
-                } else {
-                    // Handle the error if the API call fails
-                    throw new Error('Failed to toggle favorite status');
-                }
-            } catch (error) {
-                console.error(error);
-            }
-        };
-    
 
         const filteredProducts = products.filter(
             (product) => 
@@ -79,46 +41,28 @@ const Search= () => {
         return (
             <div>
                 <ProductHeader title="Products"/>
-                <p>{filteredProducts.length} results found for '{id}'</p>
+                <p style={{ fontSize: "20px", fontWeight: "bold" }}>{filteredProducts.length} results found for '{id}'</p>
                 <ul>
                     {filteredProducts.map((product) => (
                         <li key={product._id}>
-
                             <table>
-
-
-                                <tbody>
+                                 <tbody>
                                     <tr>
-
+                                        <td></td>
                                         <td>
-                                        <div>
-                                 {product.sku}
-                      
-                            <br />
-                            
-                                {product.productName}
-                           
-                            <br />
-                            
-                                 {product.productDescription}
-
-                            </div>
+                                            <div>
+                                                <p style={{ color: "#001EB9" ,fontSize: "16px"}}>{product.sku}</p>
+                                                <p style={{ color: "#162427" , fontSize: "18px", fontWeight: "bold" }}>{product.productName}</p>
+                                                 <p style={{ color: "##969191" , fontSize: "10px"}}>{product.productDescription}</p>
+                                             </div>
                                         </td>
-
                                         <td> <button onClick={() => navigate(`/products/${product._id}`)}>
-                            <img src="/arrow.svg" alt="Go" />
-                            </button>
-                        </td>
-
+                                                 <img src="/arrow.svg" alt="Go" />
+                                            </button>
+                                         </td>
                                     </tr>
                                 </tbody>
                             </table>
-                          
-                           
-
-                        
-                           
-                            <hr />
                         </li>
                     ))}
                 </ul>

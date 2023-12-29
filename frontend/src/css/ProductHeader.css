@@ -1,4 +1,4 @@
-ProductHeader.css
+
 
 .product-header {
     display: flex;
@@ -22,7 +22,7 @@ ProductHeader.css
   .search-container {
     display: flex;
     align-items: center;
-    flex-grow: 1; /* Allow the search container to grow and take up available space */
+    flex-grow: 1; 
   }
   
   input {
