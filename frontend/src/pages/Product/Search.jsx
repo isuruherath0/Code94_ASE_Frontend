@@ -100,6 +100,8 @@ const Home = () => {
                         </li>
                     ))}
                 </ul>
+
+                <button onClick={() => navigate('/')}>Go Home</button>
             </div>
         );
 };

@@ -49,6 +49,7 @@ const UpdateProduct = () => {
 
     return (
         <div>
+            <h2>Products</h2> <p> > Edit Product</p>
             <form>
                 <label>SKU:</label>
                 <input type="text" value={sku} onChange={e => setSku(e.target.value)} />
