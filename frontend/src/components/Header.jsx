@@ -1,11 +1,12 @@
-import React from 'react';
+import React from 'react'
 
-const Header = () => {
-  return (
-    <div>
-      Welcome to the Header component!
-    </div>
-  );
-};
+function Header() {
+    return (
+        <div className="header">
+            <p>admin</p>
+            <div style={{ backgroundColor: '#001EB9', width: '100px', height: '100px' }}></div>
+        </div>
+    )
+}
 
-export default Header;
+export default Header

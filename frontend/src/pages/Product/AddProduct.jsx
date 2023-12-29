@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { createProduct } from '../../features/products/productSlice';
@@ -8,11 +7,16 @@ function AddProduct() {
     const [sku, setSku] = useState('');
     const [quantity, setQuantity] = useState('');
     const [productName, setProductName] = useState('');
-    const [images, setImages] = useState([]);
+    const [imageFile, setImageFile] = useState(null); // Store the selected file
     const [productDescription, setProductDescription] = useState('');
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
+
+    const handleImageChange = (e) => {
+        const file = e.target.files[0];
+        setImageFile(file);
+    };
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -22,7 +26,7 @@ function AddProduct() {
             sku,
             quantity: parseInt(quantity),
             productName,
-            images,
+            images: imageFile ? imageFile.name : '', // Use the file name if an image is selected
             productDescription,
         };
 
@@ -33,12 +37,11 @@ function AddProduct() {
         setSku('');
         setQuantity('');
         setProductName('');
-        setImages([]);
+        setImageFile(null);
         setProductDescription('');
 
         // Navigate to home page after adding product
         navigate('/');
-        
     };
 
     return (
@@ -61,8 +64,8 @@ function AddProduct() {
                 </label>
                 <br />
                 <label>
-                    Images:
-                    <input type="file" multiple onChange={(e) => setImages(Array.from(e.target.files))} />
+                    Image:
+                    <input type="file" onChange={handleImageChange} />
                 </label>
                 <br />
                 <label>

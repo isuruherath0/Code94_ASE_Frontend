@@ -17,6 +17,7 @@ const UpdateProduct = () => {
     const [quantity, setQuantity] = useState(0);
     const [productName, setProductName] = useState('');
     const [images, setImages] = useState([]); // Add images state
+    const [imageFile, setImageFile] = useState(null); 
     const [productDescription, setProductDescription] = useState(''); // Add productDescription state
 
     useEffect(() => {
@@ -41,6 +42,11 @@ const UpdateProduct = () => {
         navigate('/');
     };
 
+    const handleImageChange = (e) => {
+        const file = e.target.files[0];
+        setImageFile(file);
+    };
+
     return (
         <div>
             <form>
@@ -53,8 +59,10 @@ const UpdateProduct = () => {
                 <label>Product Name:</label>
                 <input type="text" value={productName} onChange={e => setProductName(e.target.value)} />
 
-                <label>Images:</label> 
-                <input type="text" value={images} onChange={e => setImages(e.target.value)} />
+                <label>
+                    Image:
+                    <input type="file" onChange={handleImageChange} />
+                </label>
 
                 <label>Product Description:</label> 
                 <input type="text" value={productDescription} onChange={e => setProductDescription(e.target.value)} />

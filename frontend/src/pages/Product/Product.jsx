@@ -8,8 +8,6 @@ const Product = () => {
     const dispatch = useDispatch();
     const product = useSelector(state => state.products.product);
 
-    console.log(id);
-    console.log(product);
 
     useEffect(() => {
         dispatch(getProduct(id));
