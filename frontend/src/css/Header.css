@@ -2,15 +2,15 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    padding: 10px; /* Adjust the padding as needed */
-    background-color: #fff; /* White background */
-    color: black; /* Text color */
+    padding: 10px; 
+    background-color: #fff; 
+    color: black; 
   }
   
   .admin-text {
     font-weight: bold;
-    margin-left: 16px; /* Adjust the margin as needed */
-    font-size: 14px; /* Adjust the font size as needed */
+    margin-left: 16px; 
+    font-size: 14px; 
     font-weight: bold;
   }
 
@@ -34,4 +34,4 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-  }
+  } 
