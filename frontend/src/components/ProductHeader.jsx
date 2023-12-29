@@ -1,11 +1,10 @@
 import React from 'react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../css/ProductHeader.css'; 
+import '../css/ProductHeader.css';
 
-const ProductHeader = () => {
+const ProductHeader = ({ title }) => {
   const navigate = useNavigate();
-
   const [searchTerm, setSearchTerm] = useState("");
 
   const handleNewProduct = () => {
@@ -24,29 +23,28 @@ const ProductHeader = () => {
 
   return (
     <div>
-        <div className="product-header">
-        <h2 style={{ textAlign: 'left' }}>Products</h2>
-
-        </div>
+      <div className="product-header">
+        <h2 style={{ textAlign: 'left' }}>{title}</h2>
+      </div>
       <div className="container">
         <div className="search-container">
-            <input
+          <input
             type="text"
             placeholder="Search..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            />
-            <button className="search-button" onClick={handleSearch}>
-                Search
-            </button>
+          />
+          <button className="search-button" onClick={handleSearch}>
+            Search
+          </button>
         </div>
         <button className="new-product-button" onClick={handleNewProduct}>
-            New Product
+          New Product
         </button>
         <button className="favourites-button" onClick={handleSeeFavourites}>
-            <img src="starred.svg" alt="favourites" />
+          <img src="starred.svg" alt="favourites" />
         </button>
-        </div>
+      </div>
     </div>
   );
 };

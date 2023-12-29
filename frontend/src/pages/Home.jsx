@@ -1,39 +1,35 @@
-import React, { useState } from "react";
+
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
-import { getProducts, reset  } from "../features/products/productSlice";
+import { getProducts, reset } from "../features/products/productSlice";
 import ProductHeader from "../components/ProductHeader";
 import ProductTable from "../components/ProductTable";
 
 const Home = () => {
+  const dispatch = useDispatch();
 
+  const { message, isError, products } = useSelector(
+    state => state.products
+  );
 
-    const dispatch = useDispatch();
+  useEffect(() => {
+    if (isError) {
+      alert(message);
+    }
 
-    const { message, isError, products } = useSelector(
-        state => state.products
-    );
+    dispatch(getProducts());
 
-    React.useEffect(() => {
-        if (isError) {
-            alert(message);
-        }
+    return () => {
+      dispatch(reset());
+    };
+  }, [dispatch, isError, message]);
 
-        dispatch(getProducts());
-
-        return () => {
-            dispatch(reset());
-        };
-    }, [dispatch, isError, message]);
-
-
-    return (
-        <div>
-            <ProductHeader />
-            <ProductTable
-        products={products}
-      />
-        </div>
-    );
+  return (
+    <div>
+      <ProductHeader title="Products" />
+      <ProductTable products={products} />
+    </div>
+  );
 };
 
 export default Home;

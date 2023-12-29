@@ -36,11 +36,11 @@ const Favourites = () => {
 
     return (
         <div>
-            <ProductHeader />   
+            <ProductHeader title="Favourite Products"/>   
             <ProductTable
                  products={filteredProducts}
             />
-            <button onClick={() => navigate('/')}>Go Home</button>
+            <button onClick={() => navigate('/')}> Home</button>
            
         </div>
     );

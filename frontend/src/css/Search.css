@@ -1,0 +1,60 @@
+
+/* Additional styling for the Search component */
+.product-header {
+    /* Add or override styles for the ProductHeader component if needed */
+  }
+  
+  /* Styling for the search results */
+  p {
+    color: #969191; /* Set color to #969191 */
+  }
+  
+  ul {
+    list-style: none; /* Remove the default list item marker */
+    padding: 0;
+  }
+  
+  li {
+    color: #162427; /* Set color to #162427 */
+  }
+  
+  /* Styling for the button containing the image */
+  li button {
+    float: right; /* Align the button to the right */
+    background-color: transparent; /* Set a transparent background */
+    border: none; /* Remove the button border */
+    cursor: pointer;
+    margin-left: 10px; /* Add margin between the button and the product info */
+  }
+  
+  li button img {
+    width: 30px; /* Adjust the width of the image as needed */
+  }
+  
+  /* Styling for the product information */
+  li > div {
+    margin-bottom: 10px; /* Add margin between product information */
+  }
+  
+  li > div:nth-child(1) {
+    color: #001EB9; /* Set color to #001EB9 for product.sku */
+  }
+  
+  li > div:nth-child(2) {
+    color: #162427; /* Set color to #162427 for product.productname */
+  }
+  
+  li > div:nth-child(3) {
+    color: #969191; /* Set color to #969191 for product.description */
+  }
+  
+  /* Styling for the "Go Home" button */
+  button {
+    display: block; /* Ensure the button takes up the full width */
+    margin-top: 20px; /* Add margin between the results and the "Go Home" button */
+    background-color: #001EB9; /* Set color to #001EB9 */
+    color: #fff; /* Set text color to white */
+    padding: 10px 15px; /* Adjust padding as needed */
+    border: none; /* Remove the button border */
+    cursor: pointer;
+  }

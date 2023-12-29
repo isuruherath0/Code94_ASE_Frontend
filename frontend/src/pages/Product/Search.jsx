@@ -4,9 +4,10 @@ import { getProducts, reset , deleteProduct } from "../../features/products/prod
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import ProductHeader from "../../components/ProductHeader";
+import "../../css/Search.css";
 
 
-const Home = () => {
+const Search= () => {
 
     
         const dispatch = useDispatch();
@@ -77,33 +78,38 @@ const Home = () => {
     
         return (
             <div>
-                <ProductHeader/>
+                <ProductHeader title="Products"/>
+                <p>{filteredProducts.length} results found for '{id}'</p>
                 <ul>
                     {filteredProducts.map((product) => (
                         <li key={product._id}>
                             <div>
-                                <strong>SKU:</strong> {product.sku}
-                            </div>
+                                 {product.sku}
+                      
                             <br />
-                            <div>
-                                <strong>Product Name:</strong> {product.productName}
-                            </div>
+                            
+                                {product.productName}
+                           
                             <br />
-                            <div>
-                                <strong>Product Description:</strong> {product.productDescription}
+                            
+                                 {product.productDescription}
+
                             </div>
+                           
 
                         
-                            <button onClick={() => navigate(`/products/${product._id}`)}>go</button>
+                            <button onClick={() => navigate(`/products/${product._id}`)}>
+                            <img src="/arrow.svg" alt="Go" />
+                            </button>
                         
                             <hr />
                         </li>
                     ))}
                 </ul>
 
-                <button onClick={() => navigate('/')}>Go Home</button>
+
             </div>
         );
 };
 
-export default Home;
+export default Search;
