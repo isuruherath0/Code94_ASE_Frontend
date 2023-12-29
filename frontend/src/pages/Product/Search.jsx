@@ -83,7 +83,15 @@ const Search= () => {
                 <ul>
                     {filteredProducts.map((product) => (
                         <li key={product._id}>
-                            <div>
+
+                            <table>
+
+
+                                <tbody>
+                                    <tr>
+
+                                        <td>
+                                        <div>
                                  {product.sku}
                       
                             <br />
@@ -95,13 +103,21 @@ const Search= () => {
                                  {product.productDescription}
 
                             </div>
+                                        </td>
+
+                                        <td> <button onClick={() => navigate(`/products/${product._id}`)}>
+                            <img src="/arrow.svg" alt="Go" />
+                            </button>
+                        </td>
+
+                                    </tr>
+                                </tbody>
+                            </table>
+                          
                            
 
                         
-                            <button onClick={() => navigate(`/products/${product._id}`)}>
-                            <img src="/arrow.svg" alt="Go" />
-                            </button>
-                        
+                           
                             <hr />
                         </li>
                     ))}
