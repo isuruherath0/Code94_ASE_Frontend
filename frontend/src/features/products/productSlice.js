@@ -109,8 +109,9 @@ const productSlice = createSlice({
         builder.addCase(getProduct.fulfilled, (state, action) => {
             state.isLoading = false
             state.isSuccess = true
-            state.products = action.payload
-        })  
+            state.product = action.payload 
+
+        })
         builder.addCase(getProduct.rejected, (state, action) => {
             state.isLoading = false
             state.isError = true
@@ -142,7 +143,6 @@ const productSlice = createSlice({
             state.isSuccess = true
             state.products = state.products.map(product => product.id === action.payload.id ? action.payload : product)
         })
-
         builder.addCase(updateProduct.rejected, (state, action) => {
             state.isLoading = false
             state.isError = true
@@ -167,6 +167,8 @@ const productSlice = createSlice({
 
     }
 })
+
+
 
 export const {reset} = productSlice.actions
 
