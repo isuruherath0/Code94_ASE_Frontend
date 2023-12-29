@@ -2,6 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { deleteProduct, getProducts } from '../features/products/productSlice';
 import { useNavigate } from 'react-router-dom';
+import '../css/ProductTable.css';
 
 
 const ProductTable = ({ products }) => {
@@ -50,46 +51,59 @@ const ProductTable = ({ products }) => {
                 navigate(`/products/${productId}`);
         };
 
-    return (
-        <table>
-            <thead>
+        return (
+            <table>
+              <thead>
                 <tr>
-                    <th>SKU</th>
-                    <th>Image</th>
-                    <th>Product Name</th>
-                    <th>Quantity</th>
-                    <th></th>
+                  <th>SKU</th>
+                  <th>Image</th>
+                  <th>Product Name</th>
+                  <th>Quantity</th>
+                  <th></th>
                 </tr>
-            </thead>
-            <tbody>
+              </thead>
+              <tbody>
                 {products.map((product) => (
-                    <tr key={product._id}>
-                        <td onClick={() => handleImageClick(product._id)}>{product.sku}</td>
-                        <td>
-                            <img
-                                key={product.images}
-                                src={`/${product.images || 'image.png'}`}
-                                alt={` ${product.productName}`}
-                                onError={(e) => {
-                                    e.target.src = 'assets/image.png';
-                                }}
-                                onClick={() => handleImageClick(product._id)}
-                            />
-                        </td>
-                        <td onClick={() => handleImageClick(product._id)}>{product.productName}</td>
-                        <td>{product.quantity}</td>
-                        <td>
-                            <button onClick={() => handleEdit(product._id)}>Edit</button>
-                            <button onClick={() => handleDelete(product._id)}>Delete</button>
-                            <button onClick={() => handleToggleFavorite(product._id)}>
-                                {product.favourite ? 'Remove Favorite' : 'Add Favorite'}
-                            </button>
-                        </td>
-                    </tr>
+                  <tr key={product._id}>
+                    <td className="sku" onClick={() => handleImageClick(product._id)}>
+                      {product.sku}
+                    </td>
+                    <td>
+                      <center><img
+                        key={product.images}
+                        src={`/${product.images || 'image.png'}`}
+                        alt={` ${product.productName}`}
+                        onError={(e) => {
+                          e.target.src = 'assets/image.png';
+                        }}
+                        onClick={() => handleImageClick(product._id)}
+                        className="product-image"
+                      />
+                      </center>
+                    </td>
+                    <td className="product-name" onClick={() => handleImageClick(product._id)}>
+                      {product.productName}
+                    </td>
+                    <td className="quantity">{product.quantity}</td>
+                    <td>
+                      <button onClick={() => handleEdit(product._id)}>
+                        <img src="/edit-icon.svg" alt="Edit" />
+                      </button>
+                      <button onClick={() => handleDelete(product._id)}>
+                        <img src="/delete-icon.svg" alt="Delete" />
+                      </button>
+                      <button onClick={() => handleToggleFavorite(product._id)}>
+                        {product.favourite ? (
+                          <img src="/starred.svg" alt="Favorite" />
+                        ) : (
+                          <img src="/star.svg" alt="Add to Favorites" />
+                        )}
+                      </button>
+                    </td>
+                  </tr>
                 ))}
-            </tbody>
-        </table>
-    );
-};
-
+              </tbody>
+            </table>
+          );
+        };
 export default ProductTable;

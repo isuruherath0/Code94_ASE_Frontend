@@ -1,0 +1,45 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  th {
+    color: #001eb9;
+    text-align: center; /* Align header text to the left */
+    font-size: 20px; /* Adjust font size as needed */
+  }
+  
+  td.sku,
+  td.product-name,
+  td.quantity {
+    color: #162427;
+    text-align: center; /* Align cell text to the left */
+  }
+  
+  td.sku {
+    color: #969191;
+  }
+  
+  td img.product-image {
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+  tbody tr {
+    border-bottom: 1px solid #ddd;
+  }
+  
+  button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button img {
+    width: 20px;
+    height: 20px;
+  }

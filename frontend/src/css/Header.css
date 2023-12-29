@@ -1,0 +1,37 @@
+.header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px; /* Adjust the padding as needed */
+    background-color: #fff; /* White background */
+    color: black; /* Text color */
+  }
+  
+  .admin-text {
+    font-weight: bold;
+    margin-left: 16px; /* Adjust the margin as needed */
+    font-size: 14px; /* Adjust the font size as needed */
+    font-weight: bold;
+  }
+
+  .white-text {
+    font-weight: bold;
+    margin-left: 20px; /* Adjust the margin as needed */
+    font-size: 14px; /* Adjust the font size as needed */
+    color : white;
+  }
+  
+  
+  .avatar-container {
+    width: 50px; /* Adjust the size of the avatar container as needed */
+    height: 50px;
+    border-radius: 50%; /* Make it circular */
+    overflow: hidden;
+    background-color: #001eb9; /* Background color for the circle */
+  }
+  
+  .avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
