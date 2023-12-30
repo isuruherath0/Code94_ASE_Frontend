@@ -72,7 +72,7 @@ const ProductTable = ({ products }) => {
               <center>
                 <img
                   key={product.images}
-                    src={product.images}
+                  src={`/${product.images || 'image.png'}`}
                   alt={` ${product.productName}`}
                   onError={(e) => {
                     e.target.src = '/image.png';

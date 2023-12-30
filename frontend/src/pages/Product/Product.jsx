@@ -29,7 +29,7 @@ const Product = () => {
       <p style={{ color: '#969191' }}><span style={{ fontWeight: 'bold' , color: '#162427',fontSize : '20px'}}>Product Name: </span>{productName}</p>
       <p style={{ color: '#969191' }}><span style={{ fontWeight: 'bold' , color: '#162427', fontSize : '20px'}}>Quantity: </span>{quantity}</p>
       <div>
-        <img src={`/${product.images || 'image.png'}`} alt={productName} style={{ width: '300px', height: '200px', marginTop: '10px' }} />
+        <img src={`/${product.images || 'image.png'}`} alt={productName} style={{ width: '300px', height: '200px', marginTop: '10px' }} onError={(e) => {e.target.src = '/image.png'; }} />
       </div>
       <p style={{ color: '#969191' }}><span style={{ fontWeight: 'bold' , color: '#162427',fontSize : '20px'}}>Product Description:</span> {productDescription}</p>
     </div>
