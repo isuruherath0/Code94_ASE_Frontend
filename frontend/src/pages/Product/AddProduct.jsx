@@ -10,7 +10,7 @@ function AddProduct() {
         <h2 style={{ margin: '0' }}>PRODUCTS</h2>
       </div>
       <div style={{ margin: '10px' }}>
-        <h3 style={{ margin: '0', color:'#001EB9' }}> > Add new product</h3>
+        <h3 style={{ margin: '0', color:'#001EB9' }}> <img style={{width: '15px',height: '15px',}}src="/arrow.svg" alt="arrow.svg" /> Add new product</h3>
       </div>
     </div>  <br />  <br />
       <AddProductForm    />
