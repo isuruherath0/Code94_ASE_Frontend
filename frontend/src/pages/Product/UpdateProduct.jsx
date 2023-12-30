@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useParams } from 'react-router-dom'; // Import useParams from react-router-dom
+import { useParams } from 'react-router-dom'; 
 import { updateProduct, getProduct } from '../../features/products/productSlice';
 import { useNavigate } from 'react-router-dom';
 
@@ -16,12 +16,11 @@ const UpdateProduct = () => {
     const [sku, setSku] = useState('');
     const [quantity, setQuantity] = useState(0);
     const [productName, setProductName] = useState('');
-    const [images, setImages] = useState([]); // Add images state
-    const [imageFile, setImageFile] = useState(null); 
-    const [productDescription, setProductDescription] = useState(''); // Add productDescription state
+    const [images, setImages] = useState(''); 
+    const [imageFile, setImageFile] = useState(''); 
+    const [productDescription, setProductDescription] = useState(''); 
 
     useEffect(() => {
-        // Fetch product from Redux
         dispatch(getProduct(id));
     }, [dispatch, id]);
 
@@ -31,8 +30,8 @@ const UpdateProduct = () => {
             setSku(product.sku);
             setQuantity(product.quantity);
             setProductName(product.productName);
-            setImages(product.images); // Set images state from product in Redux
-            setProductDescription(product.productDescription); // Set productDescription state from product in Redux
+            setImages(product.images); 
+            setProductDescription(product.productDescription);
         }
     }, [product]);
 
@@ -44,7 +43,7 @@ const UpdateProduct = () => {
 
     const handleImageChange = (e) => {
         const file = e.target.files[0];
-        setImageFile(file);
+    setImageFile(file);
     };
 
     return (

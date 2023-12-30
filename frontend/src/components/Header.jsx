@@ -7,9 +7,8 @@ function Header() {
       <p className="admin-text">ADMIN</p>
       <p className="white-text">ab</p>
       <div className="avatar-container">
-        {/* You can replace the src with the actual image URL for the avatar */}
         <img
-          src="/avatar.jpg" // Placeholder URL, replace with your avatar URL
+          src="/avatar.jpg" 
           alt="Avatar"
           className="avatar"
         />

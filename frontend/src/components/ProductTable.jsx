@@ -18,7 +18,7 @@ const ProductTable = ({ products }) => {
       });
 
       if (response.ok) {
-        window.location.reload(); // Reload the page
+        window.location.reload(); 
       } else {
         // Handle the error if the API call fails
         throw new Error('Failed to toggle favorite status');
@@ -72,10 +72,10 @@ const ProductTable = ({ products }) => {
               <center>
                 <img
                   key={product.images}
-                  src={`/${product.images || 'image.png'}`}
+                    src={product.images}
                   alt={` ${product.productName}`}
                   onError={(e) => {
-                    e.target.src = 'assets/image.png';
+                    e.target.src = '/image.png';
                   }}
                   onClick={() => handleImageClick(product._id)}
                   style={{
