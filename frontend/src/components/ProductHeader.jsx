@@ -36,7 +36,7 @@ const ProductHeader = ({ title }) => {
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
-          <button className="search-button" onClick={handleSearch} style={{marginLeft: '-30px'}}>
+          <button className="search-button" onClick={handleSearch} style={{marginLeft: '-50px'}}>
             <img src="search.svg" alt="favourites" style={{ width: '13px', height: '13px', marginRight : '5px' }} onError={(e) => { e.target.onerror = null; e.target.src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYmXo4Tv234vEBakj2N1N4mdeo3PN0gVHSSA&usqp=CAU'}} />
               Search 
           </button>

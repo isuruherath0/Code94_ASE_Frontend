@@ -49,24 +49,77 @@ const UpdateProduct = () => {
 
     return (
         <div>
-            <h2>Products</h2> <p> > Edit Product</p>
-            <form>
-                <label>SKU:</label>
-                <input type="text" value={sku} onChange={e => setSku(e.target.value)} />
+                    <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
+            <div style={{ margin: '10px' }}>
+                <h2 style={{ margin: '0' }}>PRODUCTS</h2>
+            </div>
+            <div style={{ margin: '10px' }}>
+                <h3 style={{ margin: '0', color:'#001EB9' }}> > Edit product</h3>
+            </div>
+        </div>  <br />  <br />
+        
+            <form style={{ display: "flex", flexDirection: "column" }}>
 
-                <label>Quantity:</label>
-                <input type="number" value={quantity} onChange={e => setQuantity(e.target.value)} />
-
-                <label>Product Name:</label>
-                <input type="text" value={productName} onChange={e => setProductName(e.target.value)} />
-
-                <label>
-                    Image:
-                    <input type="file" onChange={handleImageChange} />
-                </label>
-
-                <label>Product Description:</label> 
-                <input type="text" value={productDescription} onChange={e => setProductDescription(e.target.value)} />
+            <div>
+        {" "}
+        <label>
+          SKU
+          <input
+            style={{ borderRadius: "0px", marginLeft: "10px" }}
+            type="text"
+            value={sku}
+            onChange={(e) => setSku(e.target.value)}
+          />
+        </label>
+        <div style={{ display: "flex", marginTop: "60px" }}>
+          <label>
+            Name
+            <input
+              style={{ borderRadius: "0px", marginLeft: "10px" }}
+              type="text"
+              value={productName}
+              onChange={(e) => setProductName(e.target.value)}
+            />
+          </label>
+          <label style={{ marginLeft: "30px" }}>
+            QTY
+            <input
+              style={{ borderRadius: "0px", marginLeft: "10px" }}
+              type="number"
+              value={quantity}
+              onChange={(e) => setQuantity(e.target.value)}
+            />
+          </label>
+        </div>
+        <br />
+        <br /> Product Description
+        <h5 style={{ color: "#8B9193", fontWeight: "500" }}>
+          A small description about the product
+        </h5>
+        <label>
+          <textarea
+            style={{
+              marginTop: "10px",
+              borderRadius: "10px",
+              width: "1078px",
+              height: "105px",
+              backgroundColor: "var(--f-7-f-7-f-7, #F7F7F7)",
+              borderColor: "var(--f-7-f-7-f-7, #F7F7F7)",
+            }}
+            value={productDescription}
+            onChange={(e) => setProductDescription(e.target.value)}
+          />
+        </label>
+        <br />{" "}
+      </div>
+      <br /> Product Images
+      <h5 style={{ color: "#8B9193", fontWeight: "500" }}>
+        JPEG, PNG, SVG or GIF<br></br> (Maximum file size 50MB)
+      </h5>
+      <label>
+        <input type="file" onChange={handleImageChange} />
+      </label>{" "}
+                
 
                 <button type="button" onClick={handleUpdate}>Update</button>
             </form>
@@ -75,3 +128,4 @@ const UpdateProduct = () => {
 };
 
 export default UpdateProduct;
+
