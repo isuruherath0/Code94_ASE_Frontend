@@ -5,15 +5,23 @@ function AddProduct() {
 
   return (
     <div>
-      <h2>Products</h2>
-      <p> > Add Product</p>
+         <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
+      <div style={{ margin: '10px' }}>
+        <h2 style={{ margin: '0' }}>PRODUCTS</h2>
+      </div>
+      <div style={{ margin: '10px' }}>
+        <h2 style={{ margin: '0', color:'#001EB9' }}> > Add new product</h2>
+      </div>
+    </div>  <br />  <br />
       <AddProductForm    />
+
+
+
     </div>
   );
 }
 
 export default AddProduct;
-
 
 
 

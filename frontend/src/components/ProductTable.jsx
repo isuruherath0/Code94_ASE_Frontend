@@ -48,7 +48,7 @@ const ProductTable = ({ products }) => {
   };
 
   return (
-    <table style={{ width: '100%', borderCollapse: 'collapse', marginTop: '20px' }}>
+    <table style={{ width: '100%', borderCollapse: 'collapse', marginTop: '20px' , marginRight : '20px' }}>
       <thead>
         <tr>
           <th>SKU</th>
@@ -98,10 +98,10 @@ const ProductTable = ({ products }) => {
             <td className="quantity" style={{ color: '#162427', textAlign: 'center' }}>
               {product.quantity}
             </td>
-            <td style={{ width: '100px' }}>
+            <td style={{ width: '100px'  }}>
               <table style={{ width: '100%', borderCollapse: 'collapse' }}>
                 <tbody>
-                  <tr>
+                  <tr >
                     <td style={{ padding: '0', textAlign: 'center' }}>
                       <button
                         onClick={() => handleEdit(product._id)}
@@ -136,6 +136,7 @@ const ProductTable = ({ products }) => {
                 </tbody>
               </table>
             </td>
+
           </tr>
         ))}
       </tbody>
